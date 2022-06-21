@@ -1,12 +1,16 @@
 // console.log('Hello World')
 const express = require('express')
+const colors = require('colors')
 // that allows a dotenv file with the variables
 const dotenv = require('dotenv').config()
 const {errorHandler} = require('./middleware/errorMiddleware')
+const connectDB = require('./config/db')
 // port we want our server to run on
 // const port = 5000
 // update to be able to use env variable for port
 const port = process.env.PORT || 5000
+
+connectDB()
 
 const app = express()
 
